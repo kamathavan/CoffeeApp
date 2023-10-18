@@ -19,5 +19,4 @@ abstract class BaseViewModel<ViewState : IViewState> : ViewModel() {
     protected fun setState(state: ViewState) {
         _viewState.value = state
     }
-
 }

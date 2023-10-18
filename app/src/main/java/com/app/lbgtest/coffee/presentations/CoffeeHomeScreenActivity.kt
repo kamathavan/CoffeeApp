@@ -1,4 +1,4 @@
-package com.app.lbgtest.coffee.presentations.coffeelist
+package com.app.lbgtest.coffee.presentations
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

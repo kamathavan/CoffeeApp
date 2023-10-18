@@ -1,4 +1,3 @@
 package app.selcukokc.coffeeguide.presentation.base
 
-interface IViewState {
-}
+interface IViewState {}
