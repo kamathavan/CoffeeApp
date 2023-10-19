@@ -10,8 +10,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.app.lbgtest.coffee.presentations.coffeelist.CoffeeListViewModel
 import com.app.lbgtest.coffee.ui.theme.CoffeeAppLBGTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CoffeeHomeScreenActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +34,10 @@ class CoffeeHomeScreenActivity : ComponentActivity() {
 
 @Composable
 fun CoffeeMainScreen(name: String, modifier: Modifier = Modifier) {
+    val viewModel: CoffeeListViewModel = hiltViewModel()
+
     Text(
-        text = "Welcome to coffee $name!", modifier = modifier
+        text = "Welcome to coffee $name!------", modifier = modifier
     )
 }
 
