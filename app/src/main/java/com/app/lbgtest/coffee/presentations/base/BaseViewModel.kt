@@ -1,4 +1,4 @@
-package app.selcukokc.coffeeguide.presentation.base
+package com.app.lbgtest.coffee.presentations.base
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State

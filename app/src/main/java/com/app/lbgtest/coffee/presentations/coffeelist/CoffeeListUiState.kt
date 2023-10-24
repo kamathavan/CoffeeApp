@@ -1,9 +1,9 @@
 package com.app.lbgtest.coffee.presentations.coffeelist
 
-import app.selcukokc.coffeeguide.presentation.base.IViewState
+import com.app.lbgtest.coffee.presentations.base.IViewState
 import com.app.lbgtest.coffee.data.model.Coffee
 
-data class CoffeeListUIState(
+data class CoffeeListUiState(
     val isLoading: Boolean = false,
     val coffees: List<Coffee>? = emptyList(),
     val error: String = ""

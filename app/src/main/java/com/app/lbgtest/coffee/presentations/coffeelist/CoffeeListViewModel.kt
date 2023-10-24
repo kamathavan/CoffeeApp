@@ -2,11 +2,9 @@ package com.app.lbgtest.coffee.presentations.coffeelist
 
 import android.util.Log
 import androidx.lifecycle.viewModelScope
-import app.selcukokc.coffeeguide.presentation.base.BaseViewModel
+import com.app.lbgtest.coffee.presentations.base.BaseViewModel
 import com.app.lbgtest.coffee.data.RequestState
 import com.app.lbgtest.coffee.data.repository.CoffeeRepositoryImpl
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -15,9 +13,9 @@ import javax.inject.Inject
 @HiltViewModel
 class CoffeeListViewModel @Inject constructor(
     private val coffeeRepository: CoffeeRepositoryImpl
-) : BaseViewModel<CoffeeListUIState>() {
-    override fun createInitialState(): CoffeeListUIState {
-        return CoffeeListUIState(coffees = emptyList())
+) : BaseViewModel<CoffeeListUiState>() {
+    override fun createInitialState(): CoffeeListUiState {
+        return CoffeeListUiState(coffees = emptyList())
     }
 
     init {
@@ -29,7 +27,7 @@ class CoffeeListViewModel @Inject constructor(
             when (state) {
                 is RequestState.Loading -> {
                     setState(
-                        CoffeeListUIState(
+                        CoffeeListUiState(
                             isLoading = true
                         )
                     )
@@ -37,7 +35,7 @@ class CoffeeListViewModel @Inject constructor(
 
                 is RequestState.SuccessState -> {
                     setState(
-                        CoffeeListUIState(
+                        CoffeeListUiState(
                             coffees = state.data
                         )
                     )
@@ -46,7 +44,7 @@ class CoffeeListViewModel @Inject constructor(
 
                 is RequestState.FailureState -> {
                     setState(
-                        CoffeeListUIState(
+                        CoffeeListUiState(
                             error = state.data
                         )
                     )
