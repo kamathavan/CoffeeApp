@@ -39,7 +39,6 @@ class CoffeeListViewModel @Inject constructor(
                             coffees = state.data
                         )
                     )
-                    Log.i("TAG", "getHotCoffees:--->${state.data}")
                 }
 
                 is RequestState.FailureState -> {
@@ -52,5 +51,4 @@ class CoffeeListViewModel @Inject constructor(
             }
         }.launchIn(viewModelScope)
     }
-
 }
