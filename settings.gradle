@@ -15,3 +15,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "CoffeeAppLBG"
 include ':app'
+
+// Data layer - all the data layer modules update here
+include 'data-layer:data:coffee'
+
+// Domain layer - all the domain layer module update here
+include 'domain-layer:domain:coffeedomain'
