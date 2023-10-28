@@ -1,6 +1,6 @@
 package com.app.lbgtest.data.coffee.model
 
-data class Coffee(
+data class CoffeeResponse(
     val title: String?,
     val description: String,
     val ingredients: List<String>,

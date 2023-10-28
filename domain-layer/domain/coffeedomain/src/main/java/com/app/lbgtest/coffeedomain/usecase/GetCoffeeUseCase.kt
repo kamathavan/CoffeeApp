@@ -13,19 +13,6 @@ import javax.inject.Inject
 class GetCoffeeUseCase @Inject constructor(
     private val coffeeRepository: CoffeeRepository
 ) {
-    operator fun invoke(): Flow<RequestState<List<Coffee>>> = flow {
-        try {
-            emit(RequestState.Loading<List<Coffee>>(loading = true))
-            val coffees = coffeeRepository.getCoffees()
-            emit(RequestState.SuccessState<List<Coffee>>(data = coffees))
-        } catch (e: Exception) {
-            emit(
-                RequestState.FailureState<List<Coffee>>(
-                    e.localizedMessage ?: "An unexpected error occurred"
-                )
-            )
-        }
-
-    }.flowOn(Dispatchers.IO)
+    operator fun invoke(): Flow<RequestState<List<Coffee>>> = coffeeRepository.getCoffees()
 
 }
