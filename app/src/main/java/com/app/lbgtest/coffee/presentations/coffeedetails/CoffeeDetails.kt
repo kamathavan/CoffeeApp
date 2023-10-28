@@ -30,8 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.app.lbgtest.coffee.presentations.coffeelist.IngredientChip
 import coil.compose.rememberImagePainter
-import com.app.lbgtest.coffee.data.model.Coffee
 import com.app.lbgtest.coffee.presentations.AppBar
+import com.app.lbgtest.coffeedomain.model.Coffee
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable()

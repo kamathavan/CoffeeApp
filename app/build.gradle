@@ -48,7 +48,17 @@ android {
     }
 }
 
+hilt {
+    enableAggregatingTask = true
+}
+
 dependencies {
+
+    // domain layer part
+    implementation(project(':domain-layer:domain:coffeedomain'))
+
+    // data layer part
+    implementation(project(':data-layer:data:coffee'))
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'

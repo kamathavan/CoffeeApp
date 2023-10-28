@@ -1,4 +1,4 @@
-package com.app.lbgtest.coffee.data.model
+package com.app.lbgtest.coffeedomain.model
 
 data class Coffee(
     val title: String?,

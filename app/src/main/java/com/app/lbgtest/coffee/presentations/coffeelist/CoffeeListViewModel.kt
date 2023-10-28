@@ -1,10 +1,9 @@
 package com.app.lbgtest.coffee.presentations.coffeelist
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.app.lbgtest.coffee.presentations.base.BaseViewModel
-import com.app.lbgtest.coffee.data.RequestState
-import com.app.lbgtest.coffee.data.repository.CoffeeRepositoryImpl
+import com.app.lbgtest.coffeedomain.model.RequestState
+import com.app.lbgtest.coffeedomain.usecase.GetCoffeeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -12,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CoffeeListViewModel @Inject constructor(
-    private val coffeeRepository: CoffeeRepositoryImpl
+    private val getCoffeeUseCase: GetCoffeeUseCase
 ) : BaseViewModel<CoffeeListUiState>() {
     override fun createInitialState(): CoffeeListUiState {
         return CoffeeListUiState(coffees = emptyList())
@@ -23,28 +22,20 @@ class CoffeeListViewModel @Inject constructor(
     }
 
     private fun getCoffeeList() {
-        coffeeRepository.getCoffees().onEach { state ->
-            when (state) {
+        getCoffeeUseCase.invoke().onEach { requestState ->
+            when (requestState) {
                 is RequestState.Loading -> {
-                    setState(
-                        CoffeeListUiState(
-                            isLoading = true
-                        )
-                    )
+                    setState(CoffeeListUiState(isLoading = true))
                 }
 
                 is RequestState.SuccessState -> {
-                    setState(
-                        CoffeeListUiState(
-                            coffees = state.data
-                        )
-                    )
+                    setState(CoffeeListUiState(coffees = requestState.data))
                 }
 
                 is RequestState.FailureState -> {
                     setState(
                         CoffeeListUiState(
-                            error = state.data
+                            error = requestState.data ?: "An unexpected error occurred"
                         )
                     )
                 }

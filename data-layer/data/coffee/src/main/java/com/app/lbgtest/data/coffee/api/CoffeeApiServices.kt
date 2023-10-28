@@ -1,6 +1,6 @@
 package com.app.lbgtest.data.coffee.api
 
-import com.app.lbgtest.data.coffee.model.Coffee
+import com.app.lbgtest.coffeedomain.model.Coffee
 import com.app.lbgtest.data.coffee.utils.Constants.COFFEES_ENDPOINT
 import retrofit2.http.GET
 
