@@ -11,7 +11,7 @@ The Screen shot flow is shown by the picture below:
 <img src="screenshots/coffee_details.png"  style="width:250px;height:400px;">
 <br> <br>
 
-## MVVM Modulararchitecture design
+## MVVM Modular Architecture Design
 <br> <br>
 <img src="screenshots/mvvm_modular_architecture_design.png">
 <br> <br>
