@@ -5,9 +5,8 @@ This concept consists of structuring the App in 3 separate modules:
 * **data**: Android module that represents the _data layer_. It contains _Repositories_ implementation, the data source _Api_ implementations and the corresponding api-specific models. 
 
 ## Screen Coffee of Application
-
 The Screen shot flow is shown by the picture below:
-<br> <br> <br>
+<br> <br>
 <img src="screenshots/coffee_list.png" alt="Coffee list" style="width:250px;height:400px;">
 <img src="screenshots/coffee_details.png"  style="width:250px;height:400px;">
-<br> <br> <br>
+<br> <br>
