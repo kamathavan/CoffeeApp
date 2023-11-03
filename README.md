@@ -4,7 +4,7 @@ This concept consists of structuring the App in 3 separate modules:
 * **domain**: Kotlin module that represents the _domain layer_. It contains _Use Cases_ (platform-independent business logic), the _Entities_ (platform-independent business models) and the _Repository interfaces_.
 * **data**: Android module that represents the _data layer_. It contains _Repositories_ implementation, the data source _Api_ implementations and the corresponding api-specific models. 
 
-## Screen Coffee of Application
+## Screen shot of CoffeeApplication
 The Screen shot flow is shown by the picture below:
 <br> <br>
 <img src="screenshots/coffee_list.png" alt="Coffee list" style="width:250px;height:400px;">
